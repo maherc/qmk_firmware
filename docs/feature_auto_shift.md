@@ -41,6 +41,9 @@ always 'belong' to the last key pressed. For example, keyrepeating a capital
 and then tapping something lowercase (whether or not it's an Auto Shift key)
 will result in the capital's *key* still being held, but shift not.
 
+Auto Shift does not apply to Tap Hold keys.  For automatic shifting of Tap Hold
+keys see [Retro Shift](tap_hold.md#retro-shift).
+
 ## How Do I Enable Auto Shift?
 
 Add to your `rules.mk` in the keymap folder:
