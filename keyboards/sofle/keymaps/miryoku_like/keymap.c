@@ -43,7 +43,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   XXXXXXX, XXXXXXX,      XXXXXXX,      XXXXXXX,      XXXXXXX,            XXXXXXX,                                       XXXXXXX,           XXXXXXX,            XXXXXXX,         XXXXXXX,        XXXXXXX,      XXXXXXX, \
   XXXXXXX, KC_Q,         KC_W,         KC_F,         KC_P,               KC_B,                                          KC_K,              KC_L,               KC_U,            KC_Y,           KC_SCLN,      XXXXXXX, \
   KC_MINS, LGUI_T(KC_A), LALT_T(KC_R), LCTL_T(KC_S), LSFT_T(KC_T),       KC_G,                                          KC_M,              LSFT_T(KC_N),       LCTL_T(KC_E),    LALT_T(KC_I),   LGUI_T(KC_O), KC_QUOT, \
-  XXXXXXX, KC_Z,         ALGR_T(KC_X), KC_C,         KC_D,               KC_V,             KC_MUTE,            XXXXXXX, KC_J,              KC_H,               KC_COMM,         ALGR_T(KC_DOT), KC_SLSH,      XXXXXXX, \
+  XXXXXXX, KC_Z,         RALT_T(KC_X), KC_C,         KC_D,               KC_V,             KC_MUTE,            XXXXXXX, KC_J,              KC_H,               KC_COMM,         RALT_T(KC_DOT), KC_SLSH,      XXXXXXX, \
                          XXXXXXX,      MO(_FUN),     LT(_MOUSE, KC_TAB), LT(_NAV, KC_ESC), LT(_NUM, KC_ENT),   KC_SPC,  LT(_SYM, KC_BSPC), LT(_MEDIA, KC_DEL), XXXXXXX,         XXXXXXX \
 ),
 
@@ -89,7 +89,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
   XXXXXXX, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, XXXXXXX,                       XXXXXXX, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, XXXXXXX, \
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_ALGR, XXXXXXX, XXXXXXX, \
+  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_RALT, XXXXXXX, XXXXXXX, \
                     XXXXXXX, XXXXXXX, KC_MUTE, KC_MPLY, KC_MSTP,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX \
 ),
 
@@ -109,9 +109,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_NAV  ] = LAYOUT( \
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX,  XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, \
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_CAPS,  LGUI(KC_J), LGUI(KC_J), LGUI(KC_K), LGUI(KC_L), XXXXXXX, \
+  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_CAPS,  LGUI(KC_H), LGUI(KC_J), LGUI(KC_K), LGUI(KC_L), XXXXXXX, \
   XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,                      KC_PRVWD, KC_LEFT,    KC_DOWN,    KC_UP,      KC_RIGHT,   KC_NXTWD, \
-  XXXXXXX, XXXXXXX, KC_ALGR, XXXXXXX, XXXXXXX, XXXXXXX, _______,    _______, KC_INS,   KC_HOME,    KC_PGDN,    KC_PGUP,    KC_END,     XXXXXXX, \
+  XXXXXXX, XXXXXXX, KC_RALT, XXXXXXX, XXXXXXX, XXXXXXX, _______,    _______, KC_INS,   KC_HOME,    KC_PGDN,    KC_PGUP,    KC_END,     XXXXXXX, \
                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    KC_SPC,  KC_BSPC,  KC_DEL,     XXXXXXX,    XXXXXXX \
 ),
 
@@ -133,7 +133,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
   XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,                      XXXXXXX, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, XXXXXXX, \
-  XXXXXXX, XXXXXXX, KC_ALGR, XXXXXXX, XXXXXXX, XXXXXXX, _______,    _______, KC_INS,  KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, XXXXXXX, \
+  XXXXXXX, XXXXXXX, KC_RALT, XXXXXXX, XXXXXXX, XXXXXXX, _______,    _______, KC_INS,  KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, XXXXXXX, \
                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    KC_BTN1, KC_BTN3, KC_BTN2, XXXXXXX, XXXXXXX \
 ),
 
@@ -155,7 +155,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
   XXXXXXX, KC_AMPR, KC_CIRC, KC_DLR,  KC_LBRC, KC_RBRC,                       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
   KC_GRV,  KC_AT,   KC_HASH, KC_ASTR, KC_LCBR, KC_RCBR,                       XXXXXXX, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, XXXXXXX, \
-  XXXXXXX, KC_PIPE, KC_LT,   KC_GT,   KC_LPRN, KC_RPRN, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_ALGR, XXXXXXX, XXXXXXX, \
+  XXXXXXX, KC_PIPE, KC_LT,   KC_GT,   KC_LPRN, KC_RPRN, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_RALT, XXXXXXX, XXXXXXX, \
                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_EXLM,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX \
 ),
 
@@ -177,7 +177,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_EQL,  KC_7,    KC_8,    KC_9,    KC_MINS, XXXXXXX, \
   XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,                      KC_ASTR, KC_4,    KC_5,    KC_6,    KC_PLUS, XXXXXXX, \
-  XXXXXXX, XXXXXXX, KC_ALGR, XXXXXXX, XXXXXXX, XXXXXXX, _______,    _______, KC_PERC, KC_1,    KC_2,    KC_3,    KC_BSLS, XXXXXXX, \
+  XXXXXXX, XXXXXXX, KC_RALT, XXXXXXX, XXXXXXX, XXXXXXX, _______,    _______, KC_PERC, KC_1,    KC_2,    KC_3,    KC_BSLS, XXXXXXX, \
                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    KC_COMM, KC_DOT,  KC_0,    XXXXXXX, XXXXXXX \
 ),
 
@@ -199,7 +199,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      RESET,   KC_QWERTY, KC_COLEMAK, XXXXXXX, XXXXXXX, XXXXXXX, \
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_PSCR, KC_F7,     KC_F8,      KC_F9,   KC_F12,  XXXXXXX, \
   XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,                      KC_SLCK, KC_F4,     KC_F5,      KC_F6,   KC_F11,  XXXXXXX, \
-  XXXXXXX, XXXXXXX, KC_ALGR, XXXXXXX, XXXXXXX, XXXXXXX, _______,    _______, KC_PAUS, KC_F1,     KC_F2,      KC_F3,   KC_F10,  XXXXXXX, \
+  XXXXXXX, XXXXXXX, KC_RALT, XXXXXXX, XXXXXXX, XXXXXXX, _______,    _______, KC_PAUS, KC_F1,     KC_F2,      KC_F3,   KC_F10,  XXXXXXX, \
                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    KC_SPC,  KC_APP,  XXXXXXX,   XXXXXXX, XXXXXXX \
 )
 };
@@ -412,35 +412,7 @@ static void render_luna(int LUNA_X, int LUNA_Y) {
 
 static void print_keymap(void) {
     oled_set_cursor(0,0);
-    switch (get_highest_layer(layer_state)) {
-        case _COLEMAK:
-            oled_write("12345", false);
-            oled_write("QWFPB", false);
-            oled_write("ARSTG", false);
-            oled_write("ZXCDV", false);
-
-            oled_write("     ", false);
-
-            oled_write("67890", false);
-            oled_write("KLUY;", false);
-            oled_write("MNEIO", false);
-            oled_write("JH,./", false);
-            break;
-        case _QWERTY:
-            oled_write("Base ", false);
-            break;
-        case _NAV  :
-            oled_write("Nav  ", false);
-            break;
-        case _SYM:
-            oled_write("Symbl", false);
-            break;
-        case _OTHER:
-            oled_write("Other", false);
-            break;
-        default:
-            oled_write("Undef", false);
-    }
+    oled_write("HELLO", false);
 }
 
 static void print_status_narrow(void) {
@@ -467,14 +439,22 @@ static void print_status_narrow(void) {
         case _QWERTY:
             oled_write("Base ", false);
             break;
-        case _NAV  :
-            oled_write("Nav  ", false);
+        case _NAV  : oled_write("Nav  ", false);
             break;
         case _SYM:
             oled_write("Symbl", false);
             break;
-        case _OTHER:
-            oled_write("Other", false);
+        case _NUM:
+            oled_write("Numbr", false);
+            break;
+        case _MOUSE:
+            oled_write("Mouse", false);
+            break;
+        case _MEDIA:
+            oled_write("Media", false);
+            break;
+        case _FUN:
+            oled_write("Funct", false);
             break;
         default:
             oled_write("Undef", false);
@@ -528,8 +508,6 @@ void oled_task_user(void) {
 #endif
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    static uint16_t my_hash_timer;
-    static uint16_t tap_time;
 
     switch (keycode) {
         case KC_QWERTY:
@@ -537,19 +515,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 set_single_persistent_default_layer(_QWERTY);
             }
             return false;
-        case KC_WQWERTY:
-            if (record->event.pressed) {
-                set_single_persistent_default_layer(_WQWERTY);
-            }
-            return false;
         case KC_COLEMAK:
             if (record->event.pressed) {
                 set_single_persistent_default_layer(_COLEMAK);
-            }
-            return false;
-        case KC_WCOLEMAK:
-            if (record->event.pressed) {
-                set_single_persistent_default_layer(_WCOLEMAK);
             }
             return false;
         case KC_PRVWD:

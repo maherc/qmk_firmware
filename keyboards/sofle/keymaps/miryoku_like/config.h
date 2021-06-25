@@ -25,7 +25,7 @@ for more options.
 #define AUTO_SHIFT_NO_SETUP
 
 // Recommended for heavy chording.
-#define QMK_KEYS_PER_SCAN 4
+// #define QMK_KEYS_PER_SCAN 4
 
 // Mouse key speed and acceleration.
 #undef MOUSEKEY_DELAY
