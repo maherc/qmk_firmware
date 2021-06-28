@@ -19,13 +19,14 @@ for more options.
 #define TAPPING_FORCE_HOLD
 
 // Auto Shift
-#define NO_AUTO_SHIFT_ALPHA
+#define RETRO_SHIFT 500
+// #define NO_AUTO_SHIFT_ALPHA
 #define AUTO_SHIFT_TIMEOUT 180
-// #define AUTO_SHIFT_MODIFIERS
+#define AUTO_SHIFT_MODIFIERS
 #define AUTO_SHIFT_NO_SETUP
 
 // Recommended for heavy chording.
-// #define QMK_KEYS_PER_SCAN 4
+#define QMK_KEYS_PER_SCAN 4
 
 // Mouse key speed and acceleration.
 #undef MOUSEKEY_DELAY
