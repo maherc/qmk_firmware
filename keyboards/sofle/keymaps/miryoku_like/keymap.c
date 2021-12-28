@@ -1,5 +1,6 @@
 #include QMK_KEYBOARD_H
 #include <stdio.h>
+/* #include "encoder_mouse.h" */
 
 enum sofle_layers {
     /* _M_XYZ = Mac Os, _W_XYZ = Win/Linux */
@@ -40,10 +41,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
 [_COLEMAK] = LAYOUT( \
-  XXXXXXX, XXXXXXX,      XXXXXXX,      XXXXXXX,      XXXXXXX,            XXXXXXX,                                       XXXXXXX,           XXXXXXX,            XXXXXXX,         XXXXXXX,        XXXXXXX,      XXXXXXX, \
+  KC_GRV,  KC_1   ,      KC_2   ,      KC_3   ,      KC_4   ,            KC_5   ,                                       KC_6   ,           KC_7   ,            KC_8   ,         KC_9   ,        KC_0   ,      LGUI(KC_ESC), \
   XXXXXXX, KC_Q,         KC_W,         KC_F,         KC_P,               KC_B,                                          KC_K,              KC_L,               KC_U,            KC_Y,           KC_SCLN,      XXXXXXX, \
   KC_MINS, LGUI_T(KC_A), LALT_T(KC_R), LCTL_T(KC_S), LSFT_T(KC_T),       KC_G,                                          KC_M,              LSFT_T(KC_N),       LCTL_T(KC_E),    LALT_T(KC_I),   LGUI_T(KC_O), KC_QUOT, \
-  XXXXXXX, KC_Z,         RALT_T(KC_X), KC_C,         KC_D,               KC_V,             KC_MUTE,            XXXXXXX, KC_J,              KC_H,               KC_COMM,         RALT_T(KC_DOT), KC_SLSH,      XXXXXXX, \
+  XXXXXXX, KC_Z,         RALT_T(KC_X), KC_C,         KC_D,               KC_V,             KC_MUTE,            XXXXXXX, KC_J,              KC_H,               KC_COMM,         RALT_T(KC_DOT), KC_SLSH,      KC_BSLS, \
                          XXXXXXX,      MO(_FUN),     LT(_MOUSE, KC_TAB), LT(_NAV, KC_ESC), LT(_NUM, KC_ENT),   KC_SPC,  LT(_SYM, KC_BSPC), LT(_MEDIA, KC_DEL), XXXXXXX,         XXXXXXX \
 ),
 
@@ -109,7 +110,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_NAV  ] = LAYOUT( \
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX,  XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, \
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_CAPS,  LGUI(KC_H), LGUI(KC_J), LGUI(KC_K), LGUI(KC_L), XXXXXXX, \
+  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      LGUI(KC_MINS),  LGUI(KC_H), LGUI(KC_J), LGUI(KC_K), LGUI(KC_L), XXXXXXX, \
   XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,                      KC_PRVWD, KC_LEFT,    KC_DOWN,    KC_UP,      KC_RIGHT,   KC_NXTWD, \
   XXXXXXX, XXXXXXX, KC_RALT, XXXXXXX, XXXXXXX, XXXXXXX, _______,    _______, KC_INS,   KC_HOME,    KC_PGDN,    KC_PGUP,    KC_END,     XXXXXXX, \
                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    KC_SPC,  KC_BSPC,  KC_DEL,     XXXXXXX,    XXXXXXX \
@@ -155,7 +156,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
   XXXXXXX, KC_AMPR, KC_CIRC, KC_DLR,  KC_LBRC, KC_RBRC,                       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
   KC_GRV,  KC_AT,   KC_HASH, KC_ASTR, KC_LCBR, KC_RCBR,                       XXXXXXX, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, XXXXXXX, \
-  XXXXXXX, KC_PIPE, KC_LT,   KC_GT,   KC_LPRN, KC_RPRN, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_RALT, XXXXXXX, XXXXXXX, \
+  XXXXXXX, KC_PIPE, KC_LT,   KC_GT,   KC_LPRN, KC_RPRN, LGUI(KC_MUTE),     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_RALT, XXXXXXX, XXXXXXX, \
                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_EXLM,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX \
 ),
 
@@ -659,19 +660,41 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 #ifdef ENCODER_ENABLE
 
 bool encoder_update_user(uint8_t index, bool clockwise) {
-    if (index == 0) {
-        if (clockwise) {
-            tap_code(KC_VOLD);
-        } else {
-            tap_code(KC_VOLU);
+    if (IS_LAYER_ON(_SYM)) {
+        if (index == 0) {
+            if (clockwise) {
+                tap_code16(G(KC_VOLU));
+            } else {
+                tap_code16(G(KC_VOLD));
+            }
         }
-    } else if (index == 1) {
-        if (clockwise) {
-            tap_code(KC_PGDOWN);
-        } else {
-            tap_code(KC_PGUP);
+    } else {
+        if (index == 0) {
+            if (clockwise) {
+                /* tap_code16(G(KC_VOLU)); */
+                tap_code(KC_VOLU);
+            } else {
+                /* tap_code16(G(KC_VOLD)); */
+                tap_code(KC_VOLD);
+            }
+        } else if (index == 1) {
+            if (clockwise) {
+                /* tap_code16(G(KC_VOLU)); */
+                tap_code(KC_WH_U);
+                tap_code(KC_WH_U);
+                tap_code(KC_WH_U);
+            } else {
+                /* tap_code16(G(KC_VOLD)); */
+                tap_code(KC_WH_D);
+                tap_code(KC_WH_D);
+                tap_code(KC_WH_D);
+            }
+/* #    ifdef POINTING_DEVICE_ENABLE */
+/*                 encoder_update_mouse_wheel(index, clockwise); */
+/* #    endif */
         }
     }
+
     return true;
 }
 #endif

@@ -7,8 +7,12 @@ for more options.
 #undef TAPPING_TERM
 #define TAPPING_TERM 200
 
+// #undef TAP_CODE_DELAY
+// #define TAP_CODE_DELAY 200
+
 #undef ENCODER_RESOLUTION
 #define ENCODER_RESOLUTION 4
+#define ENCODER_DIRECTION_FLIP
 
 #define OLED_TIMEOUT 120000
 
@@ -19,11 +23,11 @@ for more options.
 #define TAPPING_FORCE_HOLD
 
 // Auto Shift
-#define RETRO_SHIFT 500
-// #define NO_AUTO_SHIFT_ALPHA
-#define AUTO_SHIFT_TIMEOUT 180
-#define AUTO_SHIFT_MODIFIERS
-#define AUTO_SHIFT_NO_SETUP
+// #define RETRO_SHIFT 750
+// // #define NO_AUTO_SHIFT_ALPHA
+// #define AUTO_SHIFT_TIMEOUT 180
+// #define AUTO_SHIFT_MODIFIERS
+// #define AUTO_SHIFT_NO_SETUP
 
 // Recommended for heavy chording.
 #define QMK_KEYS_PER_SCAN 4
